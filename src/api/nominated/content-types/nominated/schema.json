@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nominateds",
+  "info": {
+    "singularName": "nominated",
+    "pluralName": "nominateds",
+    "displayName": "nominated"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "country_offices": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "contact_persons": {
+      "type": "json"
+    },
+    "service_supported": {
+      "type": "json"
+    },
+    "tel": {
+      "type": "json",
+      "required": false
+    },
+    "slu": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    }
+  }
+}
