@@ -491,6 +491,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     singularName: 'blog';
     pluralName: 'blogs';
     displayName: 'blog';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -499,8 +500,8 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     title: Schema.Attribute.Text & Schema.Attribute.Required;
     cover: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
-    description: Schema.Attribute.Blocks;
     slug: Schema.Attribute.UID<'title'>;
+    content: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
