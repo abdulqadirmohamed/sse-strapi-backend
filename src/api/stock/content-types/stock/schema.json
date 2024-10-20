@@ -51,6 +51,10 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "security_name"
     }
   }
 }

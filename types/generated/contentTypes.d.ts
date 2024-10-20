@@ -514,6 +514,36 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEventEvent extends Struct.CollectionTypeSchema {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'event';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    date: Schema.Attribute.Date & Schema.Attribute.Required;
+    time: Schema.Attribute.Time & Schema.Attribute.Required;
+    venue: Schema.Attribute.String & Schema.Attribute.Required;
+    cover: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'title'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
+  };
+}
+
 export interface ApiNominatedNominated extends Struct.CollectionTypeSchema {
   collectionName: 'nominateds';
   info: {
@@ -571,6 +601,7 @@ export interface ApiStockStock extends Struct.CollectionTypeSchema {
     change: Schema.Attribute.Integer & Schema.Attribute.Required;
     volume: Schema.Attribute.Integer & Schema.Attribute.Required;
     logo: Schema.Attribute.Media<'images'>;
+    slug: Schema.Attribute.UID<'security_name'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -990,6 +1021,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blog.blog': ApiBlogBlog;
+      'api::event.event': ApiEventEvent;
       'api::nominated.nominated': ApiNominatedNominated;
       'api::stock.stock': ApiStockStock;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
