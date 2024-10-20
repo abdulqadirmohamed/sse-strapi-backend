@@ -602,6 +602,14 @@ export interface ApiStockStock extends Struct.CollectionTypeSchema {
     volume: Schema.Attribute.Integer & Schema.Attribute.Required;
     logo: Schema.Attribute.Media<'images'>;
     slug: Schema.Attribute.UID<'security_name'>;
+    email: Schema.Attribute.String;
+    website: Schema.Attribute.String;
+    phone: Schema.Attribute.BigInteger;
+    address: Schema.Attribute.String;
+    isin: Schema.Attribute.BigInteger;
+    market_capitalization: Schema.Attribute.BigInteger;
+    shares_issued: Schema.Attribute.BigInteger;
+    description: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

@@ -55,6 +55,30 @@
     "slug": {
       "type": "uid",
       "targetField": "security_name"
+    },
+    "email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "address": {
+      "type": "string"
+    },
+    "isin": {
+      "type": "biginteger"
+    },
+    "market_capitalization": {
+      "type": "biginteger"
+    },
+    "shares_issued": {
+      "type": "biginteger"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
