@@ -550,6 +550,7 @@ export interface ApiNominatedNominated extends Struct.CollectionTypeSchema {
     singularName: 'nominated';
     pluralName: 'nominateds';
     displayName: 'nominated';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -561,10 +562,11 @@ export interface ApiNominatedNominated extends Struct.CollectionTypeSchema {
     location: Schema.Attribute.String & Schema.Attribute.Required;
     country_offices: Schema.Attribute.String & Schema.Attribute.Required;
     email: Schema.Attribute.String & Schema.Attribute.Required;
-    contact_persons: Schema.Attribute.JSON;
-    service_supported: Schema.Attribute.JSON;
-    tel: Schema.Attribute.JSON;
-    slu: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    contact_persons: Schema.Attribute.String;
+    service_supported: Schema.Attribute.String;
+    tel: Schema.Attribute.String;
+    language: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

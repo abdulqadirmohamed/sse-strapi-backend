@@ -4,7 +4,8 @@
   "info": {
     "singularName": "nominated",
     "pluralName": "nominateds",
-    "displayName": "nominated"
+    "displayName": "nominated",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,13 +13,13 @@
   "pluginOptions": {},
   "attributes": {
     "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "name": {
       "type": "string",
@@ -36,20 +37,22 @@
       "type": "string",
       "required": true
     },
-    "contact_persons": {
-      "type": "json"
-    },
-    "service_supported": {
-      "type": "json"
-    },
-    "tel": {
-      "type": "json",
-      "required": false
-    },
-    "slu": {
+    "slug": {
       "type": "uid",
       "targetField": "name",
       "required": true
+    },
+    "contact_persons": {
+      "type": "string"
+    },
+    "service_supported": {
+      "type": "string"
+    },
+    "tel": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
     }
   }
 }
